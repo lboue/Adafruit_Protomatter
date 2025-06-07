@@ -129,7 +129,7 @@ IRAM_ATTR static void blast_long(Protomatter_core *core, uint32_t *data) {}
 
 static void pinmux(int8_t pin, uint8_t signal) {
   esp_rom_gpio_connect_out_signal(pin, signal, false, false);
-  gpio_hal_iomux_func_sel(GPIO_PIN_MUX_REG[pin], PIN_FUNC_GPIO);
+  gpio_hal_func_sel(GPIO_PIN_MUX_REG[pin], PIN_FUNC_GPIO);
   gpio_set_drive_capability((gpio_num_t)pin, GPIO_DRIVE_STRENGTH);
 }
 
